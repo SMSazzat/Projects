@@ -1,0 +1,135 @@
+﻿@model TouristGuide.Models.PoliceStation
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.Msg</b></h3>
+}
+
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        th {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td {
+            border: 1px;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .searchbox {
+            position: absolute;
+            top: 14%;
+            left: 50%;
+            height: 40px;
+            border-radius: 40px;
+            background: #4C4746;
+            transform: translate(-50%,-50%);
+        }
+
+        .fas.fa-search {
+            color: #E83511;
+        }
+
+
+        .searchtext {
+            border: none;
+            background: none;
+            outline: none;
+            color: #fff;
+            transition: 0.4s;
+            padding: 0;
+            line-height: 35px;
+            font-size: 16px;
+            float: left;
+            width: 0px;
+        }
+
+        .submitt {
+            color: #E83511;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            float: right;
+            background: #4C4746;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        .searchbox:hover > .searchtext {
+            width: 240px;
+            padding: 0 6px;
+        }
+
+        .searchbox:hover > .submitt {
+            background: #fff;
+        }
+    </style>
+
+
+    <div class="container" style="background-color:gainsboro; margin-top:15px;">
+        <div>
+            <h2>Police Stations</h2>
+            <hr />
+            <form method="post">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="searchbox">
+                            <input class="searchtext" type="text" name="name" placeholder="type to search">
+                            <button type="submit" class="submitt"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Sl</b></th>
+                        <th><b>PoliceStation Name</b></th>
+                        <th><b>PoliceStation Address</b></th>
+                        <th><b>PoliceStation Contact</b></th>
+                        <th><b>PoliceStation District</b></th>
+                        <th><b>Action</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int sl = 1;}
+                    @foreach (var policeStation in Model.PoliceStations)
+                    {
+                        <tr>
+                            <td>@(sl++)</td>
+                            <td>@policeStation.Name</td>
+                            <td>@policeStation.Address</td>
+                            <td>@policeStation.Contact</td>
+                            <td>@policeStation.Dictrict</td>
+                            <td><a href="/PoliceStation/Update?id=@policeStation.Id" class="btn btn-primary">Update</a></td>
+                            <td><a href="/PoliceStation/Delete?id=@policeStation.Id" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>

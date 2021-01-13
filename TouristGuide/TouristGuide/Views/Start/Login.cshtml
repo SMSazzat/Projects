@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login </title>
+    <link rel="stylesheet" type="text/css" href="~/landing/loginstyle.css">
+</head>
+<body>
+    <div class="login-box">
+        <img src="~/landing/avatar.png" class="avatar">
+        <h1>Login</h1>
+        <form method="post">
+            <p>Admin Name</p>
+            <input type="text" name="username" placeholder="Enter Admin Name">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" value="Login">
+        </form>
+
+        @if(ViewBag.wrong!=null)
+        {
+            <p style="color:red;text-align:center;">@ViewBag.wrong</p>
+        }
+
+
+    </div>
+
+</body>
+</html>

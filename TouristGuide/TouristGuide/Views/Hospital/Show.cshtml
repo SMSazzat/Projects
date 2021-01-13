@@ -1,0 +1,141 @@
+﻿@model TouristGuide.Models.Hospital
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.Msg</b></h3>
+}
+
+
+
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        th {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td {
+            border: 1px;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .searchbox {
+            position: absolute;
+            top: 14%;
+            left: 50%;
+            height: 40px;
+            border-radius: 40px;
+            background: #4C4746;
+            transform: translate(-50%,-50%);
+        }
+
+        .fas.fa-search {
+            color: #E83511;
+        }
+
+
+        .searchtext {
+            border: none;
+            background: none;
+            outline: none;
+            color: #fff;
+            transition: 0.4s;
+            padding: 0;
+            line-height: 35px;
+            font-size: 16px;
+            float: left;
+            width: 0px;
+        }
+
+        .submitt {
+            color: #E83511;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            float: right;
+            background: #4C4746;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        .searchbox:hover > .searchtext {
+            width: 240px;
+            padding: 0 6px;
+        }
+
+        .searchbox:hover > .submitt {
+            background: #fff;
+        }
+    </style>
+
+
+
+   
+    <div class="container" style="background-color:gainsboro; margin-top:15px;">
+        <div>
+            <h2>Hospitals</h2>
+            <hr />
+                <form method="post">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="searchbox">
+                                <input class="searchtext" type="text" name="name" placeholder="type to search">
+                                <button type="submit" class="submitt"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Sl</b></th>
+                        <th><b>Hospital Name</b></th>
+                        <th><b>Hospital Address</b></th>
+                        <th><b>Hospital Contact</b></th>
+                        <th><b>Hospital District</b></th>
+                        <th><b>Hospital Image</b></th>
+                        <th><b>Action</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int sl = 1;}
+                    @foreach (var hospital in Model.Hospitals)
+                    {
+                        <tr>
+                            <td>@(sl++)</td>
+                            <td>@hospital.Name</td>
+                            <td>@hospital.Address</td>
+                            <td>@hospital.Contact</td>
+                            <td>@hospital.Dictrict</td>
+                            <td>@hospital.Image</td>
+                            <td><a href="/Hospital/Update?id=@hospital.Id" class="btn btn-primary">Update</a></td>
+                            <td><a href="/Hospital/Delete?id=@hospital.Id" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>

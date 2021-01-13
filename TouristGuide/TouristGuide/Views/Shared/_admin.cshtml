@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Title -->
+    <title> Admin Dashboard</title>
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Admin Dashboard Template" />
+    <meta name="keywords" content="admin,dashboard" />
+    <meta name="author" content="Steelcoders" />
+
+    <!-- Styles -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+    <link href="~/Theme/assets/plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+
+    <link href="~/Theme/assets/plugins/uniform/css/uniform.default.min.css" rel="stylesheet" />
+
+    <link href="~/Theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/line-icons/simple-line-icons.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/offcanvasmenueffects/css/menu_cornerbox.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/waves/waves.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/3d-bold-navigation/css/style.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/slidepushmenus/css/component.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/weather-icons-master/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/metrojs/MetroJs.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme Styles -->
+    <link href="~/Theme/assets/css/modern.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/css/themes/white.css" class="theme-color" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/css/custom.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Theme/assets/plugins/3d-bold-navigation/js/modernizr.js"></script>
+
+    <script src="~/Theme/assets/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
+
+</head>
+<body class="page-header-fixed">
+
+    <main class="page-content content-wrap">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="sidebar-pusher">
+                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+
+                <div class="logo-box">
+                    <a href="/Start/Home" class="logo-text"><span>ATG</span></a>
+                </div><!-- Logo Box -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
+                        </li>
+
+
+                        <!-- fullscreen Box -->
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect waves-button waves-classic toggle-fullscreen"><i class="fa fa-expand"></i></a>
+                        </li>
+
+                        <!-- setting Box -->
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                <i class="fa fa-cogs"></i>
+                            </a>
+
+
+                            <ul class="dropdown-menu dropdown-md dropdown-list theme-settings" role="menu">
+                                <li class="li-group">
+                                    <ul class="list-unstyled">
+                                        <li class="no-link" role="presentation">
+                                            Fixed Header
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right fixed-header-check" checked>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="li-group">
+                                    <ul class="list-unstyled">
+                                        <li class="no-link" role="presentation">
+                                            Fixed Sidebar
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right fixed-sidebar-check">
+                                            </div>
+                                        </li>
+                                        <li class="no-link" role="presentation">
+                                            Horizontal bar
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right horizontal-bar-check">
+                                            </div>
+                                        </li>
+                                        <li class="no-link" role="presentation">
+                                            Toggle Sidebar
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right toggle-sidebar-check">
+                                            </div>
+                                        </li>
+                                        <li class="no-link" role="presentation">
+                                            Compact Menu
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right compact-menu-check">
+                                            </div>
+                                        </li>
+                                        <li class="no-link" role="presentation">
+                                            Hover Menu
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right hover-menu-check">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="li-group">
+                                    <ul class="list-unstyled">
+                                        <li class="no-link" role="presentation">
+                                            Boxed Layout
+                                            <div class="ios-switch pull-right switch-md">
+                                                <input type="checkbox" class="js-switch pull-right boxed-layout-check">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="li-group">
+                                    <ul class="list-unstyled">
+                                        <li class="no-link" role="presentation">
+                                            Choose Theme Color
+                                            <div class="color-switcher">
+                                                <a class="colorbox color-blue" href="?theme=blue" title="Blue Theme" data-css="blue"></a>
+                                                <a class="colorbox color-green" href="?theme=green" title="Green Theme" data-css="green"></a>
+                                                <a class="colorbox color-red" href="?theme=red" title="Red Theme" data-css="red"></a>
+                                                <a class="colorbox color-white" href="?theme=white" title="White Theme" data-css="white"></a>
+                                                <a class="colorbox color-purple" href="?theme=purple" title="purple Theme" data-css="purple"></a>
+                                                <a class="colorbox color-dark" href="?theme=dark" title="Dark Theme" data-css="dark"></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="no-link"><button class="btn btn-default reset-options">Reset Options</button></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                            <a href="/Start/Login?admin=allow" class="log-out waves-effect waves-button waves-classic">
+                                <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Message/Show" class="waves-effect waves-button waves-classic" id="showRight">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul><!-- Nav -->
+                </div><!-- Top Menu -->
+            </div>
+        </div><!-- Navbar -->
+
+
+        <div class="page-sidebar sidebar">
+            <div class="page-sidebar-inner slimscroll">
+                <div class="sidebar-header">
+                    <div class="sidebar-profile">
+                        <a href="javascript:void(0);" id="profile-menu-link">
+                            <div class="sidebar-profile-image">
+
+                                <!--profile img-->
+                                <img src="~/Theme/assets/images/admin.jpeg" class="img-circle img-responsive" alt="">
+
+                            </div>
+                            <div class="sidebar-profile-details">
+                                <span>sazzad<br><small>admin</small></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <ul class="menu accordion-menu">
+
+                    <li class="active"><a href="/Start/Home" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>District</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/District/Add">Add</a></li>
+                            <li><a href="/District/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-map-marker"></span><p>Spot</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/Spot/Add">Add</a></li>
+                            <li><a href="/Spot/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon fa fa-hotel"></span><p>Hotel</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/Hotel/Add">Add</a></li>
+                            <li><a href="/Hotel/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-header"></span><p>Hospital</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/Hospital/Add">Add</a></li>
+                            <li><a href="/Hospital/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-cutlery"></span><p>Restaurant</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/Restaurant/Add">Add</a></li>
+                            <li><a href="/Restaurant/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-shopping-cart"></span><p>Shopping Mall</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/ShoppingMall/Add">Add</a></li>
+                            <li><a href="/ShoppingMall/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-tower"></span><p>Police Station</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/PoliceStation/Add">Add</a></li>
+                            <li><a href="/PoliceStation/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-phone-alt"></span><p>Rescue Service</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/RescueTeam/Add">Add</a></li>
+                            <li><a href="/RescueTeam/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-plane"></span><p>Rent-a-car</p><span class="arrow"></span></a>
+
+                        <ul class="sub-menu">
+                            <li><a href="/RentCar/Add">Add</a></li>
+                            <li><a href="/RentCar/Show">Show</a></li>
+                        </ul>
+
+                    </li>
+
+
+                    <!--page UI Kits elements-->
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-briefcase"></span><p>Package</p><span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/Package/Add">Add</a></li>
+                            <li><a href="/Package/Show">Show</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-send"></span><p>Nearest Spot</p><span class="arrow"></span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/NearestSpot/Add">Add</a></li>
+                            <li><a href="/NearestSpot/Show">Show</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <!--extra manu-->
+
+                    <li class="droplink">
+                        <a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-ok"></span><p>Reservation</p><span class="arrow"></span></a>
+                        <ul class="sub-menu">
+
+                            <li><a href="/Reservation/Show">Show</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div><!-- Page Sidebar Inner -->
+        </div><!-- Page Sidebar -->
+
+        <div class="page-inner">
+            <div class="page-title" style="height: 40px;padding-left: 22px;padding-top: 4px;">
+                <h3>Dashboard</h3>
+            </div>
+
+
+            <div id="main-wrapper">
+
+                @RenderBody()
+            </div><!-- Main Wrapper -->
+
+
+
+
+
+
+            <div class="page-footer" style="background-color: #e9edf2;">
+                <p class="no-s">2019 &copy; ATG.</p>
+            </div>
+        </div><!-- Page Inner -->
+    </main><!-- Page Content -->
+    <!-- Javascripts -->
+    
+
+    <script src="~/Theme/assets/plugins/jquery/jquery-2.1.3.min.js"></script>
+    <script src="~/Theme/assets/plugins/jquery/jquery-3.0.0.slim.min"></script>
+    <script src="~/Theme/assets/js/popper.min"></script>
+    <script src="~/Theme/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Theme/assets/plugins/pace-master/pace.min.js"></script>
+    <script src="~/Theme/assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+    <script src="~/Theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Theme/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Theme/assets/plugins/switchery/switchery.min.js"></script>
+    <script src="~/Theme/assets/plugins/uniform/jquery.uniform.min.js"></script>
+    <script src="~/Theme/assets/plugins/offcanvasmenueffects/js/classie.js"></script>
+    <script src="~/Theme/assets/plugins/offcanvasmenueffects/js/main.js"></script>
+    <script src="~/Theme/assets/plugins/waves/waves.min.js"></script>
+    <script src="~/Theme/assets/plugins/3d-bold-navigation/js/main.js"></script>
+    <script src="~/Theme/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="~/Theme/assets/plugins/jquery-counterup/jquery.counterup.min.js"></script>
+    <script src="~/Theme/assets/plugins/toastr/toastr.min.js"></script>
+    <script src="~/Theme/assets/plugins/flot/jquery.flot.min.js"></script>
+    <script src="~/Theme/assets/plugins/flot/jquery.flot.time.min.js"></script>
+    <script src="~/Theme/assets/plugins/flot/jquery.flot.symbol.min.js"></script>
+    <script src="~/Theme/assets/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script src="~/Theme/assets/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Theme/assets/plugins/curvedlines/curvedLines.js"></script>
+    <script src="~/Theme/assets/plugins/metrojs/MetroJs.min.js"></script>
+    <script src="~/Theme/assets/js/modern.js"></script>
+    <script src="~/Theme/assets/js/pages/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model TouristGuide.Models.District
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.Msg</b></h3>
+}
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 50px;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+    <div class="container" style="background-color:gainsboro; margin-top:20px;">
+        <div>
+            <h2>Districts</h2>
+            <hr />
+            <table>
+                <thead>
+                    <tr>
+                        <td><b>Sl</b></td>
+                        <td><b>District Code</b> </td>
+                        <td><b>District Name</b></td>
+                        <td><b>Action</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int sl = 1;}
+                    @foreach (var district in Model.Districts)
+                    {
+                        <tr>
+                            <td>@(sl++)</td>
+                            <td>@district.DistrictCode</td>
+                            <td>@district.DistrictName</td>
+                            <td><a href="/District/Delete?districtName=@district.DistrictName" class="btn btn-danger">Delete</a></td>
+                            @*@Html.ActionLink("Edit", "Edit", new { id = Model.DistrictName }) |*@
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+

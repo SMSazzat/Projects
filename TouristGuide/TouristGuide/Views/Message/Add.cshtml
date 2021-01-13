@@ -1,0 +1,60 @@
+﻿@model TouristGuide.Models.Message
+
+@{
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+
+<div id="main-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-white">
+                <div class="panel-body">
+                    <img src="~/landing/map.jpg" style="height: 400px; width: 100%;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Contact Info</h2>
+                            <h3>Address</h3>
+                            <address>
+                                <strong>Twitter, Inc.</strong><br>
+                                wetrwgf fghfh<br>
+                                hghsgh ghgf<br>
+                                <abbr title="Phone">P:</abbr> (123) 456-7890
+                            </address>
+                            <address>
+                                <strong>Full Name</strong><br>
+                                <a href="mailto:#">atg.mail@example.com</a>
+                            </address>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Let's keep in touch</h2>
+                            <p>We cordially welcome your valuable opinion about our system so that we can enrich our system with new features for better experience.</p>
+
+                            <form method="post">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4=6" name="mesage" placeholder="Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                @if (ViewBag.successMsg != null)
+                                {
+                                    <h3 style="color:darkcyan;margin-bottom:5px;">@ViewBag.successMsg</h3>
+                                }
+                                @if (ViewBag.failMsg != null)
+                                {
+                                    <h3 style="color:darkcyan;margin-bottom:5px;">@ViewBag.failMsg</h3>
+                                }
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- Row -->
+</div>
+

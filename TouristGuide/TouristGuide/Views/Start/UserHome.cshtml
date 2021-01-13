@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>UserHome</title>
+    </head>
+    <body>
+        <div style="height:100vh;width:100%;">
+            <img src="~/landing/bg1.jpg" height="600vh" width="100%" />
+        </div>
+    </body>
+    </html>*@
+
+<style>
+			body{
+			margin:0;
+			padding:0;
+			font-family:arial;
+			}
+			.container{
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100vh;
+			animation: animate 16s ease-in-out infinite;
+			background-size:cover;
+			}
+			@@keyframes animate{
+			0%,100%{background-image:url(/landing/1.jpg);}
+			20%{background-image:url(/landing/2.jpg);}
+			40%{background-image:url(/landing/3.jpg);}
+			60%{background-image:url(/landing/4.jpg);}
+			80%{background-image:url(/landing/5.jpg);}
+			}
+			.outer{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100vh;
+			background:rgba(0,0,0,0.5);
+			}
+			.details{
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			text-align:center;
+			}
+			.details h1{
+			font-size:4em;
+			color:lightblue;
+			}
+			.details h2 span:nth-child(1){
+			color:darkcyan;}
+			.details h2{
+			text-transform:capitalize;
+			}
+</style>
+    <div class="container">
+        <div class="outer">
+            <div class="details">
+                <h1><span>Let's find some beautiful place to get lost</span></h1>
+            </div>
+        </div>
+    </div>

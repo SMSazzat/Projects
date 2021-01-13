@@ -1,0 +1,70 @@
+﻿@model TouristGuide.Models.Message
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.Msg</b></h3>
+}
+
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 20px;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    th {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    td {
+        border: 1px;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<div class="container" style="background-color:gainsboro; margin-top:15px;">
+    <div>
+        <h2>Messages</h2>
+        <hr />
+
+        <table>
+            <thead>
+                <tr>
+                    <th><b>Sl</b></th>
+                    <th><b>Name</b></th>
+                    <th><b>Email</b></th>
+                    <th><b>Message</b></th>
+                    <th><b>Action</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sl = 1;}
+                @foreach (var message in Model.Messages)
+                {
+                    <tr>
+                        <td>@(sl++)</td>
+                        <td>@message.Name</td>
+                        <td>@message.Email</td>
+                        <td>@message.Mesage</td>
+                        <td><a href="/Message/Delete?id=@message.Id" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

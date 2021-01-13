@@ -1,0 +1,56 @@
+﻿@model TouristGuide.Models.Reservation
+@{
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+@*<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">*@
+<link rel="stylesheet" type="text/css" href="~/Login/css/style.css">
+<title>user login</title>
+    <div class="align">
+        <img class="logo" src="~/Login/img/logo.svg">
+        <div class="card">
+            <div class="head">
+                <div></div>
+                <a id="login" class="selected" href="#login">Login</a>
+                <a id="register" href="#register">Register</a>
+                <div></div>
+            </div>
+            <div class="tabs">
+                <form method="post">
+                    <input type="hidden" name="id" value="@Model.PackageId" />
+                    <div class="inputs">
+                        <div class="inputt">
+                            <input placeholder="Username" type="text" name="userName" required>
+                            <img src="~/Login/img/user.svg">
+                        </div>
+                        <div class="inputt">
+                            <input placeholder="Password" type="password" name="password" required>
+                            <img src="~/Login/img/pass.svg">
+                        </div>
+                    </div>
+                    <h3 style="color:red">@ViewBag.msg</h3>
+                    <input type="submit" class="button" value="Login">
+                </form>
+                <form method="post">
+                    <input type="hidden" name="id" value="@Model.PackageId" />
+                    <div class="inputs">
+                        <div class="inputt">
+                            <input placeholder="Email" type="email" name="email" required>
+                            <img src="~/Login/img/mail.svg">
+                        </div>
+                        <div class="inputt">
+                            <input placeholder="Username" type="text" name="name" required>
+                            <img src="~/Login/img/user.svg">
+                        </div>
+                        <div class="inputt">
+                            <input placeholder="Password" type="password" name="pass" required>
+                            <img src="~/Login/img/pass.svg">
+                        </div>
+                    </div>
+                    <input type="submit" class="button" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="~/Login/js/jquery-3.3.1.min.js"></script>
+<script src="~/Login/js/index.js"></script>

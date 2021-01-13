@@ -1,0 +1,79 @@
+﻿@model TouristGuide.Models.Reservation
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.Msg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.Msg</b></h3>
+}
+
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 20px;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    th {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    td {
+        border: 1px;
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    
+</style>
+
+
+<div class="container" style="background-color:gainsboro; margin-top:15px;">
+    <div>
+        <h2>Reservations</h2>
+        <hr />
+       
+        <table>
+            <thead>
+                <tr>
+                    <th><b>Sl</b></th>
+                    <th><b>Reservation Id</b></th>
+                    <th><b>Package Id</b></th>
+                    <th><b>Name</b></th>
+                    <th><b>Email</b></th>
+                    <th><b>Contact</b></th>
+                    <th><b>Address</b></th>
+                    <th><b>Action</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sl = 1;}
+                @foreach (var reservation in Model.Reservations)
+                {
+                <tr>
+                    <td>@(sl++)</td>
+                    <td>@reservation.Id</td>
+                    <td>@reservation.PackageId</td>
+                    <td>@reservation.Name</td>
+                    <td>@reservation.Email</td>
+                    <td>@reservation.Contact</td>
+                    <td>@reservation.Address</td>
+                    <td><a href="/Reservation/Delete?id=@reservation.Id" class="btn btn-danger">Delete</a></td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model TouristGuide.Models.Reservation
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.successMsg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.successMsg</b></h3>
+}
+
+@if (ViewBag.failMsg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.failMsg</b></h3>
+}
+
+
+<body>
+    <div class="container" style="background-color:gainsboro;margin-top:20px;">
+
+        <div class="form-horizontal">
+            <h2>Delete Reservation</h2>
+            <hr />
+
+            <form method="post">
+
+                <div class="row" style="margin-top:20px">
+                    <div class="col-md-3 text-right">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:20px">
+                    <div class="col-md-3 text-right">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:20px">
+                    <div class="col-md-3 text-right">
+                        @Html.LabelFor(model => model.Contact, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row" style="margin-top:20px">
+                    <div class="col-md-3 text-right">
+                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label" })
+                    </div>
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-1">
+                        <input type="submit" class="btn btn-danger" Value="Delete" style="margin-bottom:10px;" />
+                    </div>
+                    <td><a href="/Reservation/Show">Back to list</a></td>
+                </div>
+
+            </form>
+        </div>
+    </div>

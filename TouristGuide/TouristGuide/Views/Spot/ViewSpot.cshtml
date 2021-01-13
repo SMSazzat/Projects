@@ -1,0 +1,32 @@
+﻿@model List<TouristGuide.Models.Spot>
+
+@{
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+<title> Spots</title>
+<div class="container" style=" margin-top:20px;">
+    @foreach (var spot in Model)
+    {
+    <div>
+          <h2><b>@spot.Name</b></h2>       
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+           <img src="@Url.Content(spot.Image)" style="height:300px; width:550px;" alt="" class="img-responsive" />
+        </div>
+        <div class="col-md-6">
+           <iframe src="@spot.Location" width="550" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        </div>
+        <div>
+           <a href="/ShowNearest/GetSpot?Name=@spot.Name" class="btn btn-success">Nearby spots</a>
+        </div>
+        <div>
+           <p style="font-size:15px;">@spot.Description</p>
+        </div>
+
+            
+     }
+
+</div>

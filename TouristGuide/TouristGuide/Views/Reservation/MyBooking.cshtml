@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_user.cshtml";
+}
+
+
+    <title>Login </title>
+    <link rel="stylesheet" type="text/css" href="~/landing/loginstyle.css">
+    <div style="height:100vh; background-image: url(/Login/img/image.jpg);background-size: cover;background-position: center;">
+        <div class="login-box" style="top:35%;height:350px;">
+            <form method="post">
+                <p>User Name</p>
+                <input type="text" name="username" placeholder="Enter User Name" required>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <input type="submit" value="Show Booking">
+            </form>
+
+            @if (ViewBag.wrong != null)
+            {
+                <p style="color:red;text-align:center;">@ViewBag.wrong</p>
+            }
+
+
+        </div>
+    </div>

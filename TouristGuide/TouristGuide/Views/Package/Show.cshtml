@@ -1,0 +1,117 @@
+﻿@model TouristGuide.Models.Package
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        th {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td {
+            border: 1px;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .searchbox {
+            position: absolute;
+            top: 14%;
+            left: 50%;
+            height: 40px;
+            border-radius: 40px;
+            background: #4C4746;
+            transform: translate(-50%,-50%);
+        }
+
+        .fas.fa-search {
+            color: #E83511;
+        }
+
+
+        .searchtext {
+            border: none;
+            background: none;
+            outline: none;
+            color: #fff;
+            transition: 0.4s;
+            padding: 0;
+            line-height: 35px;
+            font-size: 16px;
+            float: left;
+            width: 0px;
+        }
+
+        .submitt {
+            color: #E83511;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            float: right;
+            background: #4C4746;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+        }
+
+        .searchbox:hover > .searchtext {
+            width: 240px;
+            padding: 0 6px;
+        }
+
+        .searchbox:hover > .submitt {
+            background: #fff;
+        }
+    </style>
+
+
+    <div class="container" style="background-color:gainsboro; margin-top:15px;">
+        <div>
+            <h2>Packages</h2>
+            <hr />           
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Sl</b></th>
+                        <th><b>Id</b></th>
+                        <th><b>Offer</b></th>
+                        <th><b>Image</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Action</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int sl = 1;}
+                    @foreach (var package in Model.Packages)
+                    {
+                    <tr>
+                        <td>@(sl++)</td>
+                        <td>@package.Id</td>
+                        <td>@package.Offer</td>
+                        <td>@package.Image</td>
+                        <td>@package.Description</td>
+                        <td><a href="/Package/Delete?id=@package.Id" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>

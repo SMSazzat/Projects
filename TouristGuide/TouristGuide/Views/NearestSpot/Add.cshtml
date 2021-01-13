@@ -1,0 +1,69 @@
+﻿@model TouristGuide.Models.NearestSpot
+
+@{
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+@if (ViewBag.existMsg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.existMsg</b></h3>
+}
+
+
+@if (ViewBag.successMsg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.successMsg</b></h3>
+}
+
+@if (ViewBag.failMsg != null)
+{
+    <h3 style="color:darkcyan;margin-top:20px;margin-left:50px;"><b>@ViewBag.failMsg</b></h3>
+}
+
+
+<div class="container" style="background-color:gainsboro;margin-top:20px;">
+
+    @using (Html.BeginForm("Add", "NearestSpot", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h2>Add Spot</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="row" style="margin-top:20px">
+                <div class="col-md-3 text-right">
+                    @Html.LabelFor(model => model.Spot, "Spot", htmlAttributes: new { @class = "control-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.DropDownListFor(c => c.Spot, Model.SpotSelectListItems, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Spot, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="row" style="margin-top:20px">
+                <div class="col-md-3 text-right">
+                    @Html.LabelFor(model => model.NearbySpot, "Nearby spot", htmlAttributes: new { @class = "control-label" })
+                </div>
+                <div class="col-md-4">
+                    @Html.DropDownListFor(c => c.NearbySpot, Model.SpotSelectListItems, null, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NearbySpot, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:10px">
+                <div class="col-md-4 text-right">
+                    <input type="submit" value="Add" class="btn btn-success" style="margin-bottom:10px" />
+                </div>
+                <td><a href="/NearestSpot/Show">Back to list</a></td>
+            </div>
+        </div>
+    }
+</div>
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
