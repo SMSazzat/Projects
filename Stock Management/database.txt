@@ -1,0 +1,53 @@
+
+create database stock
+
+
+create table companies
+(
+companyId int identity(1,1) primary key,
+companyName varchar(100) not null
+)
+
+create table categories
+(
+categoryId int identity(1,1) primary key,
+categoryName varchar(50) not null
+)
+
+create table items
+(
+itemId int identity(1,1) primary key,
+itemName varchar(50) not null,
+reorderLevel int not null,
+availableQuantity int,
+companyId int foreign key references companies(companyId),
+categoryId int foreign key references categories(categoryId)
+)
+
+create table stockIn
+(
+stockInId int identity(1,1),
+itemId int foreign key references items(itemId),
+date date,
+stockInQuantity int not null
+)
+
+create table stockOut
+(
+itemId int foreign key references items(itemId),
+date date,
+stockOutQuantity int not null,
+stockOutType varchar (10)
+)
+
+
+
+select ROW_NUMBER()over(order by (select 1)desc)as SL,itemName as Item,date as Date,stockInQuantity as Quantity,availableQuantity from stockIn left join items
+on items.itemId = stockIn.itemId where items.itemId = 1
+
+select distinct categories.categoryId,categories.categoryName from items left join categories on items.categoryId = categories.categoryId where items.companyId = 1
+
+
+SELECT i.itemName AS Item,com.companyName AS Company,cat.categoryName AS Category,availableQuantity as
+AvailableQuantity ,reorderLevel as ReorderLevel FROM Items AS i,categories as cat,companies as com where
+ i.categoryId = cat.categoryId and i.companyId = com.companyId and i.categoryId = 1 and i.companyId = 2
