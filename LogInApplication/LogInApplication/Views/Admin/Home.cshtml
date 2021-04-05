@@ -1,0 +1,25 @@
+﻿
+@{
+                /**/
+
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script>
+    function show() {
+        alert("sorry wrong information given");
+    }
+</script>
+
+@if (ViewBag.msg == "yes")
+{
+    <h4> welcome to homepage</h4>
+}
+
+@if (ViewBag.msg == "no")
+{
+
+    <script>show();</script>
+}
+

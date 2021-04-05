@@ -1,0 +1,35 @@
+﻿@model LogInApplication.Models.LogIn
+
+@{
+                /**/
+
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LogIn</h2>
+
+<form method="post">
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            Username
+            <input placeholder="Username" type="text" name="UserName" style=" margin-left:27px" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10" style="margin-top:12px">
+            Password
+            <input placeholder="Password" type="password" name="Password" style=" margin-left:30px" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="margin-top:12px">
+            <input type="submit" value="LogIn" class="btn btn-default" style="margin-right:6px" />
+            @Html.ActionLink("Don't have any account?", "AddRegistration")
+        </div>
+    </div>
+
+</form>
+
+<div style="margin-bottom:130px">
+
+</div>
